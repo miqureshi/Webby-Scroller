@@ -32,8 +32,19 @@ gsap.fromTo(
     {opacity: 1,
         scrollTrigger: {
             scrub: true,
-            start: "50%",
-            end: "60%",
+            start: "60%",
+            end: "70%",
+        },
+    }
+);
+gsap.fromTo(
+    ".para",
+    {opacity: 0},
+    {opacity: 1,
+        scrollTrigger: {
+            scrub: true,
+            start: "60%",
+            end: "70%",
         },
     }
 );
@@ -41,6 +52,8 @@ gsap.fromTo(
 images[0].onload = render;
 
 function render(){
+    context.canvas.width = images[0].width;
+    context.canvas.height = images[0].height;
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(images[ball.frame], 0, 0);
 }
